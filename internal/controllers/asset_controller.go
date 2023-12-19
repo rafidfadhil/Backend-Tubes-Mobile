@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/faruqii/Backend-Mobile-/internal/domain"
-	"github.com/faruqii/Backend-Mobile-/internal/dto"
-	"github.com/faruqii/Backend-Mobile-/internal/helper"
 	"github.com/gofiber/fiber/v2"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/domain"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/dto"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/helper"
 )
 
 func (c *AssetController) Add(ctx *fiber.Ctx) error {

@@ -3,10 +3,10 @@ package app
 import (
 	"os"
 
-	"github.com/faruqii/Backend-Mobile-/internal/config"
-	"github.com/faruqii/Backend-Mobile-/internal/repositories"
-	"github.com/faruqii/Backend-Mobile-/internal/routes"
-	"github.com/faruqii/Backend-Mobile-/internal/services"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/config"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/repositories"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/routes"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/services"
 	"github.com/gofiber/fiber/v2"
 )
 

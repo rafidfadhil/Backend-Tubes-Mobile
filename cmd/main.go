@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/faruqii/Backend-Mobile-/internal/app"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/app"
 	"github.com/joho/godotenv"
 )
 

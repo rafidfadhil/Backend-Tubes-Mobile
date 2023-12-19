@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"github.com/faruqii/Backend-Mobile-/internal/controllers"
-	"github.com/faruqii/Backend-Mobile-/internal/services"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/controllers"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/services"
 	"github.com/gofiber/fiber/v2"
 )
 

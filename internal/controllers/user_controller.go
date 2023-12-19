@@ -3,8 +3,8 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/faruqii/Backend-Mobile-/internal/domain"
-	"github.com/faruqii/Backend-Mobile-/internal/dto"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/domain"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/dto"
 	"github.com/gofiber/fiber/v2"
 )
 

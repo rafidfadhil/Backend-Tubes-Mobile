@@ -3,9 +3,9 @@ package services
 import (
 	"net/http"
 
-	"github.com/faruqii/Backend-Mobile-/internal/config"
-	"github.com/faruqii/Backend-Mobile-/internal/domain"
-	"github.com/faruqii/Backend-Mobile-/internal/repositories"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/config"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/domain"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/repositories"
 )
 
 type AssetsServices interface {

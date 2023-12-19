@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	"github.com/faruqii/Backend-Mobile-/internal/domain"
+	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/domain"
 	"gorm.io/gorm"
 )
 

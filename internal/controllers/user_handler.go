@@ -1,6 +1,6 @@
 package controllers
 
-import "github.com/faruqii/Backend-Mobile-/internal/services"
+import "github.com/rafidfadhil/Backend-Tubes-Mobile/internal/services"
 
 type UserController struct {
 	userService services.UserServices
