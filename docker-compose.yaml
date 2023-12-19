@@ -35,15 +35,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: faruqihafiz/uts-eai:v2
+    image: backend-mobile
     environment:
-      DB_HOST: backend-mobile--db-1 
+      DB_HOST: backend-tubes-mobile-db-1 
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: postgres
       DB_PORT: 5432
       DB_SSLMODE: disable
-      WAIT_HOSTS: backend-mobile--db-1:5432
+      WAIT_HOSTS: backend-tubes-mobile-db-1:5432
       WAIT_HOSTS_TIMEOUT: 30
       WAIT_SLEEP_INTERVAL: 10
       WAIT_HOST_CONNECT_TIMEOUT: 30

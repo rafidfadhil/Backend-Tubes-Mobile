@@ -3,7 +3,6 @@ module github.com/rafidfadhil/Backend-Tubes-Mobile
 go 1.21.4
 
 require (
-	github.com/faruqii/Backend-Mobile- v0.0.0-20231218091059-79c91215ee66
 	github.com/gofiber/fiber/v2 v2.51.0
 	github.com/google/uuid v1.5.0
 	github.com/joho/godotenv v1.5.1
