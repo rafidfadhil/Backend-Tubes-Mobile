@@ -177,7 +177,6 @@ func (c *AssetController) Update(ctx *fiber.Ctx) error {
 	}
 
 	response := dto.AssetResponse{
-		ID: asset.ID,
 		AssetName: asset.AssetName,
 		AssetType: asset.AssetType,
 		Description: asset.Description,

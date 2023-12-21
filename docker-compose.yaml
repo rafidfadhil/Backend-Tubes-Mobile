@@ -37,7 +37,7 @@ services:
       dockerfile: Dockerfile
     image: backend-mobile
     environment:
-      DB_HOST: backend-tubes-mobile-db-1 
+      DB_HOST: backend-tubes-mobile-db-1
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: postgres

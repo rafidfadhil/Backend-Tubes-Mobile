@@ -13,6 +13,7 @@ type AssetsRepository interface {
 	Delete(id string) (*domain.Assets, error)
 	AddDamageReport(damageReport *domain.DamageReport) (*domain.DamageReport, error)
 	AssetExists(assetID string) (bool, error)
+	DeleteDamageReport(id string) (*domain.DamageReport, error)
 }
 
 type assetsRepository struct {
@@ -99,4 +100,18 @@ func (r *assetsRepository) AssetExists(assetID string) (bool, error) {
 	}
 
 	return true, nil
+}
+
+func (r *assetsRepository) DeleteDamageReport(id string) (*domain.DamageReport, error) {
+	// id is asset id
+	// delete damage report by asset id
+	var damageReport domain.DamageReport
+
+	err := r.db.Where("asset_id = ?", id).Delete(&damageReport).Error
+
+	if err != nil {
+		return nil, err
+	}
+
+	return &damageReport, nil
 }

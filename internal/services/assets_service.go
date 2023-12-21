@@ -191,40 +191,50 @@ func (s *assetsServices) Update(id string, asset *domain.Assets) (*domain.Assets
 }
 
 func (s *assetsServices) Delete(id string) (*domain.Assets, error) {
-	conn, err := config.Connect()
-	if err != nil {
-		return nil, &ErrorMessages{
-			Message: "Failed to connect to database",
-			StatusCode: http.StatusInternalServerError,
-		}
-	}
+    conn, err := config.Connect()
+    if err != nil {
+        return nil, &ErrorMessages{
+            Message: "Failed to connect to database",
+            StatusCode: http.StatusInternalServerError,
+        }
+    }
 
-	repo := repositories.NewAssetRepository(conn)
+    repo := repositories.NewAssetRepository(conn)
 
-	// Check if the Asset exists
-	exists, err := repo.AssetExists(id)
-	if err != nil {
-		return nil, &ErrorMessages{
-			Message: "Failed to check asset existence",
-			StatusCode: http.StatusInternalServerError,
-		}
-	}
-	if !exists {
-		return nil, &ErrorMessages{
-			Message: "Asset not found",
-			StatusCode: http.StatusNotFound,
-		}
-	}
+    // Check if the Asset exists
+    exists, err := repo.AssetExists(id)
+    if err != nil {
+        return nil, &ErrorMessages{
+            Message: "Failed to check asset existence",
+            StatusCode: http.StatusInternalServerError,
+        }
+    }
+    if !exists {
+        return nil, &ErrorMessages{
+            Message: "Asset not found",
+            StatusCode: http.StatusNotFound,
+        }
+    }
 
-	// Delete asset by id
-	asset, err := repo.Delete(id)
-	if err != nil {
-		return nil, &ErrorMessages{
-			Message: "Failed to delete asset by id",
-			StatusCode: http.StatusInternalServerError,
-		}
-	}
+    // First delete associated damage reports
+    _, err = repo.DeleteDamageReport(id)
+    if err != nil {
+        return nil, &ErrorMessages{
+            Message: "Failed to delete associated damage reports",
+            StatusCode: http.StatusInternalServerError,
+        }
+    }
 
-	return asset, nil
+    // Now delete the asset
+    asset, err := repo.Delete(id)
+    if err != nil {
+        return nil, &ErrorMessages{
+            Message: "Failed to delete asset",
+            StatusCode: http.StatusInternalServerError,
+        }
+    }
+
+    return asset, nil
 }
+
 
