@@ -3,15 +3,23 @@ package app
 import (
 	"os"
 
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/config"
 	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/repositories"
 	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/routes"
 	"github.com/rafidfadhil/Backend-Tubes-Mobile/internal/services"
-	"github.com/gofiber/fiber/v2"
 )
 
 func StartApp() {
 	app := fiber.New()
+
+	app.Use(cors.New(cors.Config{
+		AllowOrigins:     "*",
+		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
+		AllowMethods:     "GET, POST, PUT, DELETE, OPTIONS, PATCH, HEAD",
+		AllowCredentials: true,
+	}))
 
 	// init database
 	db, err := config.Connect()
